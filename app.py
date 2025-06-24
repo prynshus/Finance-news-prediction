@@ -4,15 +4,23 @@ import pickle
 import nltk
 from nltk.corpus import stopwords
 
+# Ensure 'punkt' is available
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     nltk.download('punkt')
 
+# Ensure 'stopwords' is available
 try:
-    nltk.data.find('tokenizers/punkt_tab/english')
+    nltk.data.find('corpora/stopwords')
 except LookupError:
-    nltk.download('punkt_tab')
+    nltk.download('stopwords')
+
+# If using lemmatizer
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet')
 
 gb_clf = pickle.load(open('model.pkl', 'rb'))
 vectorizer =pickle.load(open('transform.pkl', 'rb'))
