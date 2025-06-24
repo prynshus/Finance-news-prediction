@@ -9,6 +9,11 @@ try:
 except LookupError:
     nltk.download('punkt')
 
+try:
+    nltk.data.find('tokenizers/punkt_tab/english')
+except LookupError:
+    nltk.download('punkt_tab')
+
 gb_clf = pickle.load(open('model.pkl', 'rb'))
 vectorizer =pickle.load(open('transform.pkl', 'rb'))
 
