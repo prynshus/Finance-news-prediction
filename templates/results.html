@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			ML app
+		</div>
+		<h2>Finance news sentimental analysis prediction</h2>
+
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
+	<div class="results">
+
+
+	{% if prediction == 2%}
+	<h2 style="color:green;">Positive</h2>
+	{% elif prediction == 1%}
+	<h2 style="color:blue;">Neutral</h2>
+    {% elif prediction == 0%}
+    <h2 style="color:red;">Negative</h2>
+    {% endif %}
+	</div>
+</body>
+</html>
