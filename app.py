@@ -4,6 +4,11 @@ import pickle
 import nltk
 from nltk.corpus import stopwords
 
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 gb_clf = pickle.load(open('model.pkl', 'rb'))
 vectorizer =pickle.load(open('transform.pkl', 'rb'))
 
